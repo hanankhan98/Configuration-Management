@@ -2,21 +2,6 @@
 
 This project demonstrates how to use **Ansible** for configuration management on a Linux server. The playbook automates the setup of a web server, installs and configures **Nginx**, and uploads a static HTML website.
 
-## Table of Contents
-
-- [Ansible Configuration Management Project](#ansible-configuration-management-project)
-  - [Table of Contents](#table-of-contents)
-  - [Project Setup](#project-setup)
-    - [Prerequisites](#prerequisites)
-    - [Steps to Set Up](#steps-to-set-up)
-  - [Roles](#roles)
-    - [Base Role](#base-role) 
-    - [Nginx Role](#nginx-role)
-    - [App Role](#app-role)
-    - [SSH Role](#ssh-role)
-  - [Running the Playbook](#running-the-playbook)
-    - [Running Specific Roles](#running-specific-roles)
-
 ## Project Setup
 
 ### Prerequisites
@@ -33,7 +18,7 @@ Before you begin, ensure the following are set up:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/joisyousef/Configuration-Management.git
+   git clone https://github.com/hanankhan98/Configuration-Management.git
    cd Configuration-Management
    ```
 
@@ -42,13 +27,14 @@ Before you begin, ensure the following are set up:
 
 ```ini
    [webserver]
-   192.168.1.3 ansible_user=yousef
+   public_ip ansible_user=ububutu ansible_ssh_private_key_file=~/.ssh/xyz.pem
 ```
 
 3. **Prepare the Tarball**:
    Place your `website.tar.gz` file in the root of this project or specify its location in the playbook.
+  (The purpose of website.tar.gz is to package your static website files into a single archive so that Ansible can easily upload and deploy them to the server in one step.)
 
-4. **Ensure SSH Keys**:
+5. **Ensure SSH Keys**:
    Make sure your SSH key is properly set up for Ansible to connect to the target machine.
 
 ---
@@ -116,5 +102,5 @@ If you want to run only specific roles, you can use the `--tags` option. For exa
 ```bash
 ansible-playbook -i inventory.ini setup.yml --tags "app"
 ```
-
+https://roadmap.sh/projects/configuration-management
 ---
