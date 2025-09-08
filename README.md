@@ -10,7 +10,7 @@ This project demonstrates how to use **Ansible** for configuration management on
     - [Prerequisites](#prerequisites)
     - [Steps to Set Up](#steps-to-set-up)
   - [Roles](#roles)
-    - [Base Role](#base-role)
+    - [Base Role](#base-role) 
     - [Nginx Role](#nginx-role)
     - [App Role](#app-role)
     - [SSH Role](#ssh-role)
